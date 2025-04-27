@@ -2,6 +2,8 @@
 
 这是一个用于查看 iOS 应用日志的 Web 界面，通过 WebSocket 实时接收和显示 iOS 应用的日志信息。
 
+配合iOS Backend Server使用: [Realtime Log iOS BE](https://github.com/SerenitySpace/RealtimeLogVieweriOSBE)
+
 ## 功能特点
 
 - 📱 实时日志显示
@@ -24,10 +26,6 @@
 web/
 ├── src/
 │   ├── App.vue          # 主应用组件
-│   ├── stores/          # Pinia 状态管理
-│   │   └── log.js       # 日志状态管理
-│   └── utils/           # 工具函数
-│       └── highlight.js # 文本高亮工具
 └── vite.config.js       # Vite 配置
 ```
 
