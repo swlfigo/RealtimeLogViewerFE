@@ -3,13 +3,14 @@
     <header class="header">
       <h1>iOS Log Viewer</h1>
       <div class="filter-box">
-        <div class="search-box">
+        <div class="search-box" style="display: flex; gap: 0.5rem; align-items: center;">
           <input 
             v-model="searchText" 
             type="text" 
             placeholder="搜索日志..." 
             @input="handleSearch"
           />
+          <button class="clear-btn" @click="handleClearLogs">清空</button>
         </div>
         <div class="level-filter">
           <label class="level-checkbox" v-for="level in logLevels" :key="level">
@@ -365,6 +366,11 @@ const handleLevelFilter = () => {
   })
 }
 
+const handleClearLogs = () => {
+  logStore.clearLogs()
+  showToastMessage('日志已清空', 'success')
+}
+
 onMounted(() => {
   connectWebSocket()
 })
@@ -637,6 +643,20 @@ onUnmounted(() => {
       background-color: #d13438;
       color: #fff;
     }
+  }
+}
+
+.clear-btn {
+  padding: 0.5rem 1rem;
+  background-color: #d13438;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+  &:hover {
+    background-color: #a4262c;
   }
 }
 </style> 
