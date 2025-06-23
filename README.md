@@ -4,6 +4,8 @@
 
 配合iOS Backend Server使用: [Realtime Log iOS BE](https://github.com/SerenitySpace/RealtimeLogVieweriOSBE)
 
+默认WS端口8080,如果项目中BE修改了默认端口,需要手动修改WebBundle中的端口或重新打包该项目产物
+
 ## 功能特点
 
 - 📱 实时日志显示
